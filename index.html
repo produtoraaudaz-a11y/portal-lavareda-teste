@@ -1,17 +1,38 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111"><title>Lavareda — Aprovação de Conteúdo</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="wrap nav"><div class="logo">LAVAREDA<small>ADVOGADOS</small></div><nav class="topnav"><button id="navApproval" class="viewbtn on" onclick="setView('approval')">Aprovação</button><button id="navCalendar" class="viewbtn" onclick="setView('calendar')">Calendário</button></nav></div></header>
-<main class="wrap">
-<section class="hero"><div class="kicker">Conteúdos prontos para revisão</div><h1>Seus conteúdos estão prontos.</h1><p id="heroText">Assista ao vídeo, confira a capa e a legenda. Aprove ou envie uma solicitação de alteração.</p><div id="systemNotice" class="demo"><b>V1 real:</b> carregando conteúdos e histórico central...</div></section>
-<section class="stats"><div class="stat"><span class="label">Conteúdos</span><b id="total">—</b></div><div class="stat"><span class="label">Aprovados</span><b id="approved">—</b></div><div class="stat"><span class="label">Alterações</span><b id="revisions">—</b></div></section>
-<section id="approvalView"><div id="tabs" class="tabs"></div><section id="person" class="person"></section><section id="grid" class="grid"></section></section>
-<section id="calendarView" class="hidden">
-<div class="calendar-head"><div><div class="kicker">Planejamento editorial</div><h2 id="calendarTitle">Calendário</h2></div><p>As datas abaixo são previstas. Se precisar mover um conteúdo, abra o item e solicite uma nova data. A data planejada permanece até a alteração ser confirmada pela equipe.</p></div>
-<div class="legend"><span><i class="dot ok"></i>Aprovado</span><span><i class="dot rev"></i>Alteração solicitada</span><span><i class="dot"></i>Aguardando aprovação</span></div>
-<div id="calendar" class="cal"></div><div id="agenda" class="mobile-agenda"></div>
-</section>
-</main>
-<footer><div class="wrap">AUDAZ · Portal de entrega e aprovação</div></footer>
-<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modal-card"><div class="modal-cover"><img id="modalImg" alt=""></div><div class="modal-body"><div class="kicker" id="modalId"></div><h3 id="modalTitle"></h3><div id="modalMeta" class="modal-meta"></div><div class="label">Data planejada</div><div id="modalPlanned" style="font-size:13px;margin-top:6px"></div><div class="datebox" style="grid-template-columns:1fr"><div><div class="label" style="margin-bottom:6px">Nova data desejada</div><input id="newDate" type="date"></div></div><div class="label" style="margin-top:12px">Motivo (opcional)</div><textarea id="dateReason" style="min-height:65px" placeholder="Ex.: preferimos publicar após o evento..."></textarea><div class="modal-actions"><button onclick="closeModal()">Fechar</button><button class="primary" id="dateRequestBtn" onclick="requestDate()">Solicitar nova data</button></div></div></div></div>
-<div id="toast" class="toast"></div>
-<script src="app.js"></script></body></html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151514">
+  <title>AUDAZ — Portal do Cliente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-block"><div class="audaz-mark"><span class="record-dot"></span><strong>AUDAZ</strong><small>PRODUTORA</small></div></div>
+      <nav id="sideNav" class="side-nav"></nav>
+      <div class="sidebar-bottom">
+        <button class="help-card" data-nav="arquivos"><span class="eyebrow">PRECISA DE ALGO?</span><strong>Fale com a Audaz.</strong><small>Arquivos e suporte em um só lugar.</small><span class="arrow">→</span></button>
+        <div class="theme-switcher" aria-label="Aparência"><button data-theme-mode="system" title="Automático">◐</button><button data-theme-mode="light" title="Claro">☼</button><button data-theme-mode="dark" title="Escuro">●</button></div>
+      </div>
+    </aside>
+    <header class="mobile-header"><div class="audaz-mark compact"><span class="record-dot"></span><strong>AUDAZ</strong></div><div class="mobile-actions"><button id="mobileTheme" class="icon-btn" aria-label="Alternar aparência">◐</button><button id="mobileMenu" class="icon-btn" aria-label="Abrir menu">☰</button></div></header>
+    <main class="main-shell">
+      <div class="top-line"><div><span class="corner"></span><span class="eyebrow">PORTAL DO CLIENTE</span></div><div id="clientLogo" class="client-logo"></div></div>
+      <section id="page-dashboard" class="page active"></section>
+      <section id="page-conteudos" class="page"></section>
+      <section id="page-calendario" class="page"></section>
+      <section id="page-aprovacoes" class="page"></section>
+      <section id="page-arquivos" class="page"></section>
+    </main>
+  </div>
+  <div id="drawer" class="drawer"><div class="drawer-panel"><div class="drawer-head"><strong>MENU</strong><button id="closeDrawer">×</button></div><nav id="drawerNav"></nav></div></div>
+  <div id="toast" class="toast"></div>
+  <div id="modal" class="modal"><div class="modal-card" id="modalCard"></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
