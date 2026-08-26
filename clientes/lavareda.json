@@ -1,0 +1,18 @@
+{
+  "id":"lavareda",
+  "name":"Lavareda",
+  "descriptor":"Advogados",
+  "logoMode":"wordmark",
+  "accent":"#ff1900",
+  "headline":"Conteúdo jurídico com intenção, clareza e presença.",
+  "manifesto":"ESTRATÉGIA. DIREITO. RESULTADOS.",
+  "welcome":"Acompanhe conteúdos, aprovações e planejamento de publicações em um só lugar.",
+  "backend":"https://script.google.com/macros/s/AKfycbzufjfh35KTaxfBel76R5KsIpY4ar-BpKSKGb-GVUIeTqmMGOkcqb45JC_wz8QxMY51/exec",
+  "projectKey":"lav_0ElBvC4JhJd38Yvv",
+  "features":{"dashboard":true,"conteudos":true,"calendario":true,"aprovacoes":true,"arquivos":true},
+  "files":[
+    {"title":"Materiais do projeto","description":"Documentos e materiais de apoio do ciclo atual.","type":"folder","url":"#"},
+    {"title":"Pasta de entregas","description":"Acesso aos arquivos finais quando necessário.","type":"video","url":"#"},
+    {"title":"Suporte Audaz","description":"Canal para dúvidas sobre entregas e planejamento.","type":"support","url":"#"}
+  ]
+}
